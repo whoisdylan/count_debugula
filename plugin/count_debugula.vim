@@ -14,7 +14,16 @@ map <silent> <unique> <script> <Plug>CountDebugulize
 	\ :set lz<CR>:call <SID>CountDebugulize()<CR>:set nolz<CR>
 
 fun! s:CountDebugulize()
-	execute "normal! Oprintf(\"CountDebugula " . s:count . "\\n\");\<esc>"
+	let filetype = &filetype
+	if filetype == "c"
+		execute "normal! Oprintf(\"CountDebugula " . s:count . "\\n\");\<esc>"
+	elseif filetype == "cpp"
+		execute "normal! Ostd::cout << \"CountDebugula " . s:count . "\" << std::endl;\<esc>"
+	elseif filetype == "ruby" || filetype == "eruby"
+		execute "normal! Oprint \"CountDebugula " . s:count . "\\n\"\<esc>"
+	elseif filetype == "javascript"
+		execute "normal! Oconsole.log(\"CountDebugula " . s:count . "\");\<esc>"
+	endif
 	let s:count += 1
 endfun
 

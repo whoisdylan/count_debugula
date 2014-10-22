@@ -9,10 +9,10 @@ The default mapping for inserting the print line is \<Leader>d
 
 I like to use , as my leader key; hey maybe you'd like that too
 
-Installation
+How to install
 -
 1.  Download and set up [Pathogen](https://github.com/tpope/vim-pathogen)
-2.  Clone this repo into your ~/.vim/plugin folder with: git clone https://github.com/tpope/vim-pathogen
+2.  Clone this repo into your ~/.vim/bundle folder with: git clone https://github.com/tpope/vim-pathogen
 
 TODO
 -

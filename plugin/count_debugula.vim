@@ -23,6 +23,8 @@ fun! s:CountDebugulize()
 		execute "normal! Oprint \"CountDebugula " . s:count . "\\n\"\<esc>"
 	elseif filetype == "javascript"
 		execute "normal! Oconsole.log(\"CountDebugula " . s:count . "\");\<esc>"
+        elseif filetype == "scala"
+                execute "normal! Oprintln(\"CountDebugula " . s:count . "\")\<esc>"
         elseif filetype == "click"
 		execute "normal! Oprint \"CountDebugula " . s:count . "\",\<esc>"
 	endif

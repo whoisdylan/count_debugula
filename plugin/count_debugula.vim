@@ -26,7 +26,7 @@ fun! s:CountDebugulize()
         elseif filetype == "scala"
                 execute "normal! Oprintln(\"CountDebugula " . s:count . "\")\<esc>"
         elseif filetype == "click"
-		execute "normal! Oprint \"CountDebugula " . s:count . "\",\<esc>"
+		execute "normal! Oread sprintf \"CountDebugula " . s:count . "\",\<esc>"
 	endif
 	let s:count += 1
 endfun

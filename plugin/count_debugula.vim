@@ -19,6 +19,8 @@ fun! s:CountDebugulize()
 		execute "normal! Oprintf(\"CountDebugula " . s:count . "\\n\");\<esc>"
 	elseif filetype == "cpp"
 		execute "normal! Ostd::cout << \"CountDebugula " . s:count . "\" << std::endl;\<esc>"
+	elseif filetype == "rust"
+		execute "normal! Oprintln!(\"CountDebugula " . s:count . "\");\<esc>"
 	elseif filetype == "ruby" || filetype == "eruby"
 		execute "normal! Oprint \"CountDebugula " . s:count . "\\n\"\<esc>"
 	elseif filetype == "javascript"
